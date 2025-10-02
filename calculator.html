@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .clear {
+            color: white;
+            background-color: red;
+        }
+
+        .met {
+            color: white;
+            background-color: blue;
+        }
+
+        .num {
+            color: white;
+            background-color: black;
+        }
+
+        .ans {
+            background-color: red;
+            color: white
+        }
+
+        #display {
+            width: 100%;
+            padding: 5px;
+            font-size: 25px;
+            color: black;
+            background-color: azure;
+            text-align: right;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body >
+    <table style="width: 193px;height:190px;background-color:brown">
+        <tbody>
+            <tr>
+                <td>
+                    <input id="display" type="text" placeholder="0"><br>
+                    <input class="clear" type="button" style="width: 60px;padding-left:10mm"  value="AC">
+                    <input class="met" type="button" style="width: 60px;" value="%">
+                    <input class="met" type="button" style="width: 60px;padding-right:10mm" value="/"><br>
+                    <input class="met" type="button" style="width: 60px;padding-left:10mm" value="*">
+                    <input class="met" type="button" style="width: 60px;" value="+">
+                    <input class="met" type="button" style="width: 60px;padding-right:10mm" value="-"><br>
+                    <input class="num" type="button" style="width: 60px;padding-left:10mm" value="7">
+                    <input class="num" type="button" style="width: 60px;" value="8">
+                    <input class="num" type="button" style="width: 60px;padding-right:10mm" value="9"><br>
+                    <input class="num" type="button" style="width: 60px;padding-left:10mm" value="4">
+                    <input class="num" type="button" style="width: 60px;" value="5">
+                    <input class="num" type="button" style="width: 60px;padding-right:10mm" value="6"><br>
+                    <input class="num" type="button" style="width: 60px;padding-left:10mm" value="1">
+                    <input class="num" type="button" style="width: 60px;" value="2">
+                    <input class="num" type="button" style="width: 60px;padding-right:10mm" value="3"><br>
+                    <input class="num" type="button" style="width: 60px;padding-left:10mm" value="0">
+                    <input class="met" type="button" style="width: 60px;" value=".">
+                    <input class="ans" type="button" style="width: 60px;padding-right:10mm" value="ANS">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+<script>
+    $('.num').click(function () {
+        $('#display').val($('#display').val() + $(this).val());
+    });
+    $('.met').click(function () {
+        $('#display').val($('#display').val() + $(this).val());
+    });
+    $('.clear').click(function () {
+        $('#display').val('');
+    });
+    $('.ans').click(function () {
+        $('#display').val(eval($('#display').val()));
+    });
+
+</script>
+
+</html>
